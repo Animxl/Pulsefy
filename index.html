@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pulsefy - Expert Social Media Marketing Agency specializing in content creation, video editing, and brand management">
+    <title>Pulsefy - Social Media Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, #1E3A8A, #ffffff);
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-text {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        #mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .form-input {
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: #1E3A8A;
+            outline: none;
+        }
+
+        nav a,
+        nav .text-xl {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #ffffff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #1E3A8A;
+            transform: scale(1.1);
+        }
+
+        .nav-link:focus {
+            outline: none;
+            color: #1E3A8A;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-mission-vision {
+            flex: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 9999px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+            transition: transform 0.3s ease;
+            width: 300px;
+            justify-content: center;
+        }
+
+        .contact-info .whatsapp {
+            background-color: #25D366;
+        }
+
+        .contact-info .email {
+            background-color: #1E3A8A;
+        }
+
+        .contact-info a:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-info a svg {
+            margin-right: 0.75rem;
+        }
+
+        .contact-details {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .contact-details p {
+            font-size: 1.125rem;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2d2d2d;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body class="font-['Poppins'] bg-gray-50">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 md:hidden p-4">
+        <button id="close-menu" class="absolute top-4 right-4" aria-label="Close menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <nav class="mt-8 space-y-4">
+            <a href="#services" class="block text-gray-800 hover:text-blue-600">Services</a>
+            <a href="#about" class="block text-gray-800 hover:text-blue-600">About</a>
+            <a href="#contact" class="block text-gray-800 hover:text-blue-600">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-gradient text-white p-4 sticky top-0 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold">Pulsefy</a>
+            <button id="menu-toggle" class="md:hidden" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="nav-link hover:text-blue-600">Services</a>
+                <a href="#about" class="nav-link hover:text-blue-600">About</a>
+                <a href="#contact" class="nav-link hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient text-white px-4">
+        <div class="text-center">
+            <h1 class="hero-text font-bold mb-6">Creating Impact. Sharing Stories.</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Empowering your brand with strategic content that resonates.</p>
+            <a href="#services" class="inline-block bg-white text-blue-900 py-3 px-8 rounded-full text-xl hover:bg-gray-100 transition-colors">
+                Explore Services
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-semibold text-center mb-12 text-blue-900">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="service-card p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">🎬 Reels/Video Editing</h3>
+                    <p class="text-gray-700">Professional video editing that captures attention and drives engagement across social platforms.</p>
+                </div>
+                <div class="service-card p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">🎨 Flyer Design</h3>
+                    <p class="text-gray-700">Eye-catching designs that effectively communicate your message and attract your target audience.</p>
+                </div>
+                <div class="service-card p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">✍️ Content Writing</h3>
+                    <p class="text-gray-700">SEO-optimized content that engages your audience and elevates your brand voice.</p>
+                </div>
+                <div class="service-card p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">📱 Social Media Management</h3>
+                    <p class="text-gray-700">Strategic management of your social media presence to boost engagement and grow your audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-semibold text-blue-900 text-center mb-12">Our Story</h2>
+            <div class="about-section max-w-6xl mx-auto">
+                <div class="about-content">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Crafting Digital Excellence</h3>
+                    <p class="text-lg text-gray-700 mb-6">At Pulsefy, we're more than just a social media agency – we're your digital growth partners. Founded with a vision to transform how brands connect with their audience, we combine creative storytelling with data-driven strategies to deliver exceptional results.</p>
+                    <p class="text-lg text-gray-700 mb-6">Our journey began with a simple belief: every brand has a unique story worth telling. Today, we help businesses of all sizes find their voice and make meaningful connections in the digital space.</p>
+                </div>
+
+                <div class="about-mission-vision">
+                    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                        <h3 class="text-2xl font-semibold text-blue-900 mb-4">Our Mission</h3>
+                        <p class="text-gray-700">To create dynamic reels, design compelling visuals, and craft impactful content while managing social media platforms to help brands connect, grow, and inspire their audiences.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-blue-900 mb-4">Our Vision</h3>
+                        <p class="text-gray-700">To revolutionize social media storytelling, making every brand memorable through creative reels, engaging content, and innovative strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-semibold text-blue-900 mb-8">Contact Us</h2>
+
+        <!-- Contact Info Section (Background: Blue) -->
+        <div class="bg-blue-900 text-white p-8 rounded-lg shadow-lg mb-8">
+            <p class="text-lg mb-2">📞 WhatsApp Us: <strong>+94 76 891 7140</strong></p>
+            <p class="text-lg">📧 Email Us: <strong>pulsfyy@gmail.com</strong></p>
+        </div>
+
+        <!-- Contact Buttons Section (Background: Light Blue) -->
+        <div class="bg-light-blue-100 p-8 rounded-lg shadow-lg mb-8">
+            <div class="flex justify-center gap-8">
+                <!-- WhatsApp Contact (Green) -->
+                <a href="https://wa.me/94768917140" class="whatsapp text-white flex items-center justify-center p-4 bg-green-500 rounded-full transition transform hover:scale-105 w-72">
+                    <i class="fab fa-whatsapp text-white text-4xl mr-4"></i>
+                    WhatsApp
+                </a>
+                <!-- Email Contact (Blue) -->
+                <a href="mailto:pulsfyy@gmail.com" class="email text-white flex items-center justify-center p-4 bg-blue-600 rounded-full transition transform hover:scale-105 w-72">
+                    <i class="fas fa-envelope text-white text-4xl mr-4"></i>
+                    Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Info Section (Background: Gray) -->
+        <div class="bg-gray-200 p-8 rounded-lg shadow-lg">
+            <p class="text-lg mb-2">For any inquiries, please feel free to reach out through our contact methods above.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer Section with Copyright -->
+    <footer class="bg-gray-800 text-white py-6 mt-16">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2025 Pulsefy. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
